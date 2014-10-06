@@ -106,7 +106,9 @@ make install || sudo make install || su -c "make install"
 cd ..
 cd ./libdragon/
 # Get and execute libdragon GameShark patch script from GitHub
-
+wget -c https://github.com/ppcasm/gsdevkit/blob/master/drgnpatch/patchdrgn.sh
+chmod a+x patchdrgn.sh
+./patchdrgn.sh
 export N64_INST=/usr/mips64-elf
 make
 export N64_INST=/usr/mips64-elf/mips64-elf
