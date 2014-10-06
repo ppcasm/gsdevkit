@@ -162,7 +162,6 @@ else
 fi
 
 # If we got this far then we should be okay to clean up
-find . -type f ! -wholename $0 -delete && find . -type d ! -wholename $0 -delete
 
 # Get back to normal user
 EOF
