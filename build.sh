@@ -20,23 +20,23 @@ if (( EUID ==0 )); then
      exit -1;
 fi
 
-sudo bash <<"EOF"
-(( EUID )) && { echo 'Could not get root priviliges.'; exit 1; } || echo 'Running as root, starting service...'
-
 # If NOT on a Debian based OS, comment the lines below
 
 # Dependencies:
-sudo apt-get install build-essential
-sudo apt-get install git
-sudo apt-get install libusb-1.0-0-dev
-sudo apt-get install libgmp-dev
-sudo apt-get install libmpfr-dev
-sudo apt-get install libmpc-dev
-sudo apt-get install texinfo
-sudo apt-get install gcc-multilib
-sudo apt-get install g++-multilib
-sudo apt-get install zlib1g-dev
-sudo apt-get install libncurses5-dev
+sudo apt-get --yes  install build-essential
+sudo apt-get --yes  install git
+sudo apt-get --yes  install libusb-1.0-0-dev
+sudo apt-get --yes  install libgmp-dev
+sudo apt-get --yes  install libmpfr-dev
+sudo apt-get --yes  install libmpc-dev
+sudo apt-get --yes  install texinfo
+sudo apt-get --yes  install gcc-multilib
+sudo apt-get --yes  install g++-multilib
+sudo apt-get --yes  install zlib1g-dev
+sudo apt-get --yes  install libncurses5-dev
+
+sudo bash <<"EOF"
+(( EUID )) && { echo 'Could not get root priviliges.'; exit 1; } || echo 'Running as root, starting service...'
 
 # EDIT THIS LINE TO CHANGE YOUR INSTALL PATH!
 export INSTALL_PATH=/usr/mips64-elf
@@ -162,6 +162,15 @@ else
 fi
 
 # If we got this far then we should be okay to clean up
+sudo rm -rf binutils-$BINUTILS_V
+sudo rm -rf gcc-$GCC_V
+sudo rm -rf newlib-$NEWLIB_V
+sudo rm -rf gcc_compile/
+sudo rm -rf drgnpatch/
+sudo rm -rf *.tar.gz
+sudo rm -rf *.tar.bz2
+sudo rm -rf gs_libusb
+sudo rm -rf libdragon/
 
 # Get back to normal user
 EOF
