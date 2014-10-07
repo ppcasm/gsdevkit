@@ -11,9 +11,12 @@
 echo "Applying GameShark development related patches to libdragon source tree"
 
 # Get patches from Github
-wget -c https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/entr$
-wget -c  https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/ent$
+wget -c https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/entrypoint.S
+wget -c  https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/entrypoint_2.S
 
 cp -a entrypoint.S ./src
 cp -a entrypoint_2.S ./src
+
+
+
 
