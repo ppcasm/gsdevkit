@@ -14,9 +14,9 @@ A: gsdevkit is a buildscript that pulls together multiple tools to assist in the
 
 The tools:
 
-  The tools consist of gsuploader, which was written by HCS ( http://www.hcs64.com ) and libdragon ( www.dragonminded.com ) as well as other various tools.
+The tools consist of gsuploader, which was written by HCS ( http://www.hcs64.com ) and libdragon ( www.dragonminded.com ) as well as other various tools.
   
-  There exists a parallel port version of gsuploader in my repository @ https://github.com/ppcasm/gsuploader and it's possible this could work for you with this buildscript by building the source seperate, and then copying the binary to the appropriate place, but the best means by far is to pick up a MOSCHIP 7705 based USB to parallel port adapter and use it with the gs_libusb version of gsuploader. As such, since the version in my repository is deprecated as far as I'm concerned, I don't include it in the buildscript.
+There exists a parallel port version of gsuploader in my repository @ https://github.com/ppcasm/gsuploader and it's possible this could work for you with this buildscript by building the source seperate, and then copying the binary to the appropriate place, but the best means by far is to pick up a MOSCHIP 7705 based USB to parallel port adapter and use it with the gs_libusb version of gsuploader. As such, since the version in my repository is deprecated as far as I'm concerned, I don't include it in the buildscript.
 
 Q: I really like NES... Do you like NES?
 
@@ -25,3 +25,7 @@ A: YES! Which his exactly why I've made the buildscript copy out the examples fr
 Q: How do I run this script?
 
 A: Very simple. Copy the build.sh script anywhere on your system, or even run it from place by typing something along the lines of ./build.sh and then it'll ask for your root password and after that it takes a long while but everything should be automated and you should end up with a message letting you know when it's finished. At that point you should have a complete and ready toolchain to start programming for N64 using a GameShark! 
+
+SHAMELESS PLUG:
+
+By using some of the code in gsuploader that HCS wrote for accessing the MOSCHIP 7705 USB to parallel port adapter pins directly, I was able to create a demo/test software that let's you use this same adapter with legacy software (software usually mapped to 0x378 etc) With a few changes though (mainly to the READ_PORT and WRITE_PORT functions) it can be made to work with microcontrollers and such. The software only works on Windows at the moment, but if you're interested in this kind of thing then check it out at https://github.com/ppcasm/mappar
