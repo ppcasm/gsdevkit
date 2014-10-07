@@ -2,7 +2,7 @@
 # Nintendo64 GameShark DevKit install script by ppcasm. (10-5-2014)
 
 # Based off of install script by Shaun Taylor
-# GSUploader by HCS
+# gsuploader by HCS
 # Libdragon by Dragonminded
 # Tested working on Ubuntu 14.04 x86_64
 
@@ -106,7 +106,7 @@ make install || sudo make install || su -c "make install"
 cd ..
 cd ./libdragon/
 # Get and execute libdragon GameShark patch script from GitHub
-wget -c https://github.com/ppcasm/gsdevkit/blob/master/drgnpatch/patchdrgn.sh
+wget -c https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/patchdrgn.sh
 chmod a+x patchdrgn.sh
 ./patchdrgn.sh
 export N64_INST=/usr/mips64-elf
