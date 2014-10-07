@@ -7,4 +7,13 @@
 # sit inside of the libdragon folder before it is built, and get/copy/etc
 # any file over the libdragon source tree in order to create a working
 # GameShark programming environment. -ppcasm
+
 echo "Applying GameShark development related patches to libdragon source tree"
+
+# Get patches from Github
+wget -c https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/entr$
+wget -c  https://raw.githubusercontent.com/ppcasm/gsdevkit/master/drgnpatch/ent$
+
+cp -a entrypoint.S ./src
+cp -a entrypoint_2.S ./src
+
