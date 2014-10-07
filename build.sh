@@ -129,6 +129,7 @@ mv chksum64 /usr/mips64-elf/bin/
 
 # Build gsuploader
 cd ./gs_libusb
+cp ./examples/*.* /usr/bin/ 
 make
 cp ./gsuploader/gsuploader /usr/bin/
 cd ..
