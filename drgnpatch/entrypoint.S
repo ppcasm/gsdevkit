@@ -1,4 +1,4 @@
-/*
+/* TEST- DID IT WORK
  *   N64 init code for GNU as
  */
 
